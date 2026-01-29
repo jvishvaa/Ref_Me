@@ -135,7 +135,7 @@ export default function Dashboard() {
     return COLOR_SCHEMES[Math.abs(hash) % COLOR_SCHEMES.length];
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setRefData((prev) => ({
       ...prev,
@@ -169,7 +169,7 @@ export default function Dashboard() {
         deleteDoc(doc(db, "users", user.uid, "reference", referenceId)),
         deleteDoc(doc(db, "publicReferences", referenceId)).catch(() => {}),
       ]);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error deleting reference:", err);
       showToast(err.message || "Something went wrong", "error");
     }
@@ -251,7 +251,7 @@ export default function Dashboard() {
       setEditingId(null);
 
       console.log("✅ Reference saved successfully");
-    } catch (err) {
+    } catch (err: any) {
       console.error("❌ Submit error:", err);
     }
   };

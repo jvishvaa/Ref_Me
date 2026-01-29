@@ -112,7 +112,7 @@ export default function SignUp() {
       setLoading(false);
       router.push("/auth/signIn");
       console.log("User stored in Firestore");
-    } catch (error) {
+    } catch (error: any) {
       showToast(error.message || "Something went wrong", "error");
     }
   };
