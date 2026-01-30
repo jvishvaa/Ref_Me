@@ -535,7 +535,7 @@ export default function Dashboard() {
                         placeholder="Reference Name"
                         value={refData?.referenceName}
                         onChange={handleChange}
-                        className="w-full border font-medium text-sm px-4 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
+                        className="w-full border font-medium text-sm text-gray-700 placeholder-gray-400 px-4 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
                       />
                     </div>
 
@@ -550,7 +550,7 @@ export default function Dashboard() {
                         placeholder="Reference Link"
                         value={refData?.referenceLink}
                         onChange={handleChange}
-                        className="w-full border font-medium text-sm px-4 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
+                        className="w-full border font-medium text-sm text-gray-700 placeholder-gray-400 px-4 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
                       />
                     </div>
 
@@ -664,7 +664,7 @@ export default function Dashboard() {
                             placeholder="New Category"
                             value={newCategory}
                             onChange={(e) => setNewCategory(e.target.value)}
-                            className="w-1/2 border font-medium text-sm px-4 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
+                            className="w-1/2 border font-medium text-sm text-gray-700 px-4 placeholder-gray-400 py-1 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent outline-none transition-all"
                           />
                           <button
                             className="flex gap-2 px-3 py-1 text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors cursor-pointer"

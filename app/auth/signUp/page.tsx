@@ -136,11 +136,11 @@ export default function SignUp() {
             <GradualText text="Register your HEART" highlight="HEART" />
           </h1>
           <div className="mb-5">
-            <div className="mb-2 text-md">User Name</div>
+            <div className="mb-2 text-md text-gray-700">User Name</div>
             <input
               name="username"
               placeholder="Enter your name"
-              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 ${
+              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 text-gray-700 placeholder-gray-400 ${
                 errors.username ? "border-red-300" : "border-gray-300"
               }`}
               value={signupData?.username}
@@ -158,12 +158,12 @@ export default function SignUp() {
             )}
           </div>
           <div className="mb-5">
-            <div className="mb-2 text-md">Email</div>
+            <div className="mb-2 text-md text-gray-700">Email</div>
             <input
               name="email"
               placeholder="Enter your email"
               type="email"
-              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 ${
+              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 text-gray-700 placeholder-gray-400 ${
                 errors.email ? "border-red-300" : "border-gray-300"
               }`}
               value={signupData?.email}
@@ -181,12 +181,12 @@ export default function SignUp() {
             )}
           </div>
           <div className="mb-5">
-            <div className="mb-2 text-md">Password</div>
+            <div className="mb-2 text-md text-gray-700">Password</div>
             <input
               name="password"
               placeholder="Enter your password"
               type="password"
-              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 ${
+              className={`bg-white border rounded-xl p-1 pl-3 w-full mb-1 text-gray-700 placeholder-gray-400 ${
                 errors.password ? "border-red-300" : "border-gray-300"
               }`}
               value={signupData?.password}
@@ -221,7 +221,7 @@ export default function SignUp() {
             </button>
           </div>
           <div className="flex flex-wrap mt-3 justify-center text-sm">
-            <span>Already have an account?</span>
+            <span className="text-gray-700">Already have an account?</span>
             <div
               className="text-red-500 font-semibold ml-2 cursor-pointer"
               onClick={() => router.push("/auth/signIn")}
@@ -230,13 +230,31 @@ export default function SignUp() {
             </div>
           </div>
         </div>
-        <div className="hidden sm:block sm:w-1/2 relative p-2">
-          <Image
-            src="/auth/panda-nature.jpg"
-            alt="Login"
-            fill
-            className="object-cover"
-          />
+
+        <div className="hidden sm:block sm:w-1/2 relative overflow-hidden rounded-xl">
+          {/* Gradient fallback */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700" />
+
+          <motion.div
+            initial={{ opacity: 0, scale: 1.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 1.8,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="absolute inset-0"
+          >
+            <Image
+              src="/auth/panda-nature.jpg"
+              alt="Signup"
+              fill
+              priority
+              className="object-cover"
+            />
+          </motion.div>
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/25" />
         </div>
       </motion.div>
     </div>
